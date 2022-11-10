@@ -1,7 +1,9 @@
+import imagenes from '../assets/imagenes';
+
+
 const CartWidget = () => {
     return (
-    
-        <img src="img/icon/shopping-cart.jpg" className="cart_icon" height="30px;" alt="Carrito"/>
+        <img src={imagenes.ShoppingCart.img} className="cart_icon" alt={imagenes.ShoppingCart.alt} />
     )
   }
   

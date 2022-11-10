@@ -20,6 +20,10 @@
     background-color: #24252B!important;
   }
 
+  .navbar_container .navbar-brand{
+    cursor: pointer;
+  }
+
   .navbar_container .navbar-brand .logo_code_shop{
     height: 37px;
   }
@@ -31,6 +35,7 @@
   .cart_icon{
     cursor: pointer;
     order: 1;
+    height: 30px;
   }
 
 
