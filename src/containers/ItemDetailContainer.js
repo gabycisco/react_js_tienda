@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
   const{ idItem } = useParams();
 
   useEffect(() => {
-      ProductsPromise(2000, productsArray.find(item => item.id == idItem))
+      ProductsPromise(2000, productsArray.find(item => item.id === parseInt(idItem)))
           .then(response => setinfoProd(response))
           .catch(err => console.log(err))
   })

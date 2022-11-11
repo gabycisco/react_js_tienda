@@ -1,7 +1,30 @@
+
+import { useEffect, useState } from "react";
+
 const ItemDetail = ({ item }) => {
-    /* props = {
-        text: ""
-    } */
+
+    const [addIdem, setAddItem] = useState(1); // HOOK!!!
+
+    const addItem = () => {
+      /* rate++; */
+
+        setAddItem(addIdem + 1);
+      
+    }
+
+    const removeItem = () => {
+      /* rate++; */
+      if (addIdem >1) {
+        setAddItem(addIdem - 1);
+      }
+    }
+
+
+    useEffect(() => {
+      
+
+    }, [addIdem])
+
     return (
       <div className="detail-product">
           
@@ -16,11 +39,11 @@ const ItemDetail = ({ item }) => {
               <h5>${item.price}</h5>
 
               <div className="cantContainer">
-                <button>-</button>
-                <div className="cantidad">1</div>
-                <button>+</button>
+                <button onClick={removeItem}>-</button>
+                <div className="cantidad">{addIdem}</div>
+                <button onClick={addItem}>+</button>
               </div>
-              <button className="detailsItem-bt" onClick={item.buyItem}>Agregar al carrito</button>
+              <button className="detailsItem-bt">Agregar al carrito</button>
             </div>
         </div>
           
