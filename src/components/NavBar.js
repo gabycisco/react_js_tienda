@@ -1,7 +1,7 @@
 import CartWidget   from './CartWidget';
 import CategoryList from './CategoryList';
 import imagenes     from '../assets/imagenes';
-
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -12,9 +12,9 @@ const NavBar = () => {
                     <img src={imagenes.HamburgerV2.img}  className="hamburger_menu" alt={imagenes.HamburgerV2.alt} />
                 </button>
 
-                <div className="navbar-brand">
+                <Link className="navbar-brand" to='/'>
                     <img src={imagenes.CodeShopLogoDark.img}  className="logo_code_shop" alt={imagenes.CodeShopLogoDark.alt} />
-                </div>
+                </Link>
                 
                 <CartWidget />
                 <CategoryList />
