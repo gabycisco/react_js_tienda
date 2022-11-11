@@ -21,7 +21,7 @@ const ItemListContainer = () => {
         /* console.log(productsArray) */
     } else {
       console.log(categoryId)
-      ProductsPromise(2000, productsArray.filter(item => item.idCategory === categoryId))
+      ProductsPromise(2000, productsArray.filter(item => item.idCategory === parseInt(categoryId)))
         .then(response => setDatos(response))
         .catch(err => console.log(err))
 

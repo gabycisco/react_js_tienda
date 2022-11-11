@@ -14,8 +14,7 @@ const Item = (props) => {
           <h5>${props.price}</h5>
         </div>
         <div className="list-bts">
-          <button className="buyItem-bt" onClick={props.buyItem}>SUMAR AL CARRITO</button>
-          <Link className="detailsItem-bt" to={`/item/${props.id}`}>Detalles</Link>
+          <Link className="detailsItem-bt" to={`/item/${props.id}`}>Ver detalle</Link>
         </div>
     </div>
     )
