@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
     firestoreFecthOne(idItem)
       .then(result => setDatos(result))
       .catch(err => console.log(err));
-  })
+  }, [idItem]);
     
     return (
       <>
