@@ -1,33 +1,28 @@
-import { useEffect, useState } from "react";
 import ItemList from "../components/ItemList";
-import productsArray from "../utils/productsArray";
-import ProductsPromise from "../utils/ProductsPromise";
+import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
+import { firestoreFetch } from "../utils/firestoreFetch";
 
 
 const ItemListContainer = () => {
+
   const [datos, setDatos] = useState([])
   const { categoryId } = useParams();
-
+  
   useEffect(() => {
 
-    if (categoryId === undefined) {
+    firestoreFetch(categoryId)
+      .then(result => setDatos(result))
+      .catch(err => console.log(err));
 
-      ProductsPromise(2000, productsArray)
-        .then(
-          response => setDatos(response)
-        )
-        .catch(err => console.log(err))
-        /* console.log(productsArray) */
-    } else {
-      console.log(categoryId)
-      ProductsPromise(2000, productsArray.filter(item => item.idCategory === parseInt(categoryId)))
-        .then(response => setDatos(response))
-        .catch(err => console.log(err))
+  }, [categoryId]);
 
-    }
 
-  }, [categoryId])
+  useEffect(() => {
+    return(() => {
+      setDatos([]);
+    })
+  }, []);
 
   return (
     <>

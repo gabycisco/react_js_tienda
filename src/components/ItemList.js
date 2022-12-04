@@ -20,7 +20,11 @@ const ItemList = ({items}) => {
             />
         ))
 
-        : <h1>Cargando productos.</h1>
+        : <div className="loadingContainer">
+            <div>
+              <span>Cargando...</span>
+            </div>
+          </div>
       }
       </>
     )

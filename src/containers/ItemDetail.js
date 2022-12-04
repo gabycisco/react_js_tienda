@@ -3,19 +3,19 @@ import { useEffect, useState } from "react";
 
 const ItemDetail = ({ item }) => {
 
-    const [addIdem, setAddItem] = useState(1); // HOOK!!!
+    const [counter, setCounter] = useState(1); // HOOK!!!
 
     const addItem = () => {
       /* rate++; */
-
-        setAddItem(addIdem + 1);
+        
+      setCounter(counter + 1);
       
     }
 
     const removeItem = () => {
       /* rate++; */
-      if (addIdem >1) {
-        setAddItem(addIdem - 1);
+      if (counter >1) {
+        setCounter(counter - 1);
       }
     }
 
@@ -23,7 +23,7 @@ const ItemDetail = ({ item }) => {
     useEffect(() => {
       
 
-    }, [addIdem])
+    }, [counter])
 
     return (
       <div className="detail-product">
@@ -40,7 +40,7 @@ const ItemDetail = ({ item }) => {
 
               <div className="cantContainer">
                 <button onClick={removeItem}>-</button>
-                <div className="cantidad">{addIdem}</div>
+                <div className="cantidad">{counter}</div>
                 <button onClick={addItem}>+</button>
               </div>
               <button className="detailsItem-bt">Agregar al carrito</button>

@@ -10,8 +10,10 @@ const Item = (props) => {
         </div>
         <div className="product-info">
           <span className="product-title">{props.title}</span>
-          <p>Stock: {props.stock}</p> 
           <h5>${props.price}</h5>
+          <p>Stock: {props.stock}</p> 
+          
+          
         </div>
         <div className="list-bts">
           <Link className="detailsItem-bt" to={`/item/${props.id}`}>Ver detalle</Link>
