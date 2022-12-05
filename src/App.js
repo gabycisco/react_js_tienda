@@ -1,6 +1,7 @@
 import './normalize.css';
 import './App.css';
 import NavBar from './components/NavBar';
+import CartContextProvider from './components/CartContext';
 import Cart from './components/Cart'
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer'
@@ -8,7 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   return (
-
+      <CartContextProvider>
         <BrowserRouter>
         <NavBar />
 
@@ -21,7 +22,7 @@ const App = () => {
           </Routes>
           </div>
         </BrowserRouter>
-
+      </CartContextProvider>
 
     
   )

@@ -1,52 +1,49 @@
-
-import { useEffect, useState } from "react";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useCartContext } from "../components/CartContext";
+import ItemCount from "../components/ItemCount";
 
 const ItemDetail = ({ item }) => {
-
-    const [counter, setCounter] = useState(1); // HOOK!!!
-
-    const addItem = () => {
-      /* rate++; */
-        
-      setCounter(counter + 1);
-      
-    }
-
-    const removeItem = () => {
-      /* rate++; */
-      if (counter >1) {
-        setCounter(counter - 1);
-      }
-    }
+  const [itemCount, setItemCount] = useState(0);
+  const {addItem} = useCartContext();
 
 
-    useEffect(() => {
-      
-
-    }, [counter])
+  const onAdd = (cant) => {
+      alert("Vas a sumar " + cant + " items al carrito.");
+      setItemCount(cant);
+      addItem(item,cant);
+  }
 
     return (
       <div className="detail-product">
-          
           <div className="principal-container">
             <div className="detail-product-image">
+              <span className="img-brand-name">{item.brand}</span>
               <img src={item.pictureUrl} alt="Product" />
             </div>
             <div className="product-details">
-            <span className="product-detail-title">{item.title}</span>
+              <span className="product-detail-title">{item.title}</span>
               <p>{item.description}</p>
-              <p>Stock: {item.stock}</p> 
               <h5>${item.price}</h5>
-
-              <div className="cantContainer">
-                <button onClick={removeItem}>-</button>
-                <div className="cantidad">{counter}</div>
-                <button onClick={addItem}>+</button>
+              {
+                item.stock === 0
+                ? <h5>Sin Stock</h5>
+                : <p>Stock: {item.stock}</p>
+              }
+              
+             
+             
+              <div className="buy-price-container">
+                <div className='item_count_father'>
+                  {
+                    itemCount === 0
+                  ? <ItemCount stock={item.stock} onAdd={onAdd} />
+                  : <Link to='/cart' style={{ textDecoration: "none" }}><button className="detailsItem-bt" variant="contained" color="secondary">Ir al carrito</button></Link>
+                  }
+                </div>
               </div>
-              <button className="detailsItem-bt">Agregar al carrito</button>
             </div>
         </div>
-          
     </div>
     )
   }

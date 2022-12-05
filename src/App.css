@@ -240,6 +240,172 @@
   font-weight: 700;
 }
 
+.notifCartItems {
+  position: absolute;
+  background-color: #f02d00;
+  color: white;
+  border-radius: 12px;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  font-size: .7rem;
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CART - START */
+
+  .logo_EmptyCart{
+    width: 6rem;
+  }
+.no_items{
+  height: calc(100vh - 95px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.no_items p{
+  font-size: 35px;
+  font-weight: 900;
+}
+
+.no_items .buyItem-bt{
+  text-decoration: none;
+  
+}
+.cart_card{
+  height: 6rem;
+  width: 98.5%;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  margin: 0rem 0rem 0rem 1rem;
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+  .cart_card .img{
+    height: 70%;
+    max-width: 10rem;
+    object-fit: cover;
+    display: flex;
+    align-self: center;
+  }
+
+  .cart_card_info{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 900;
+  }
+  
+  .cart_card_info span{
+    width: 80%;
+    text-align: center;
+  }
+  
+  .brand_title{
+    width: 31rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+  }
+  
+  .rest_prod_title{
+    width: 80%;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .delete_icon{
+    height: 100%;
+    color: rgb(161, 161, 161);
+    width: 1.5rem;
+    cursor: pointer;
+  }
+  .cart_father{
+    height: calc(100vh - 120px);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-between;
+  }
+
+  .principal_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titles_cart{
+    width: 99%;
+    color: black;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid rgb(212, 212, 212);
+    margin-left: 10px;
+  }
+
+  .prod_title{
+    width: 50rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+  }
+
+  .rest_title{
+    width: 80%;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .totals_container{
+    background-color: #fcfcfe;
+    height: calc(100vh - 63px);
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 20px 0px 20px;
+    color: black;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  }
+  
+  .totals_container button{
+    width: 100%;
+  }
+  
+  .del_disc_taxes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .del_disc_titles{
+    display: flex;
+    flex-direction: column;
+    font-weight: 900;
+  }
+  
+  .del_disc_values{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+
+/* CART - END */ 
+
 @media screen and (max-width: 990px) {
 
   /* NAVBAR - START */
